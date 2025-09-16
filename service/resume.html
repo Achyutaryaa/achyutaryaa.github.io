@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Achyutarya Raaz</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            line-height: 1.5;
+            background: #f5f5f5;
+            color: #000;
+            padding: 20px;
+            font-size: small;
+        }
+
+        .resume {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #ddd;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .contact {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        h2 {
+            font-size: 20px;
+            border-bottom: 1px solid #000;
+            margin: 20px 0 10px;
+            padding-bottom: 5px;
+        }
+
+        .para {
+            text-align: justify;
+        }
+
+        .item {
+            display: flex;
+            background-color: #ddd;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .sub-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 20px;
+            flex: 1;
+        }
+
+        .sub-item p:last-child {
+            background-color: #a09d9d;
+            color: #fff;
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+
+        .item h3 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        #experience .item {
+            display: block;
+        }
+
+        ul {
+            margin-left: 20px;
+            list-style: square;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px 28px;
+            margin-top: 10px;
+        }
+
+        .skills>div {
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .skills h3 {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #222;
+            border-bottom: 2px solid #bbbaba;
+            padding-bottom: 2px;
+        }
+
+        .skills p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 2px solid #000;
+        }
+
+        @media (max-width: 600px) {
+            .item {
+                display: block;
+            }
+
+            .sub-item {
+                margin: 0;
+            }
+
+            .skills {
+                display: block;
+            }
+
+            .skills>div {
+                margin-bottom: 5px;
+
+            }
+        }
+
+        /* ✅ Print-friendly */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+                font-size: 12pt;
+            }
+
+            .resume {
+                border: none;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            /* prevent sections from splitting across pages */
+            section {
+                page-break-inside: avoid;
+                /* legacy support */
+                break-inside: avoid;
+                /* modern */
+                margin-bottom: 20px;
+            }
+
+            section h2 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            /* optional: avoid page breaks right after lists */
+            ul,
+            li {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume">
+
+        <!-- Header -->
+        <header>
+            <h1>Achyutarya Raaz</h1>
+            <p>B.Tech CSE (Cybersecurity) | Full-Stack Developer</p>
+            <div class="contact">
+                <p>
+                    📞 +91-7903383528 | 📧 Achyutaryaa@gmail.com <br>
+                    🌐 github.com/Achyutaryaa | linkedin.com/in/Achyutaryaa <br>
+                </p>
+            </div>
+        </header>
+
+        <hr>
+
+        <!-- Profile Summary -->
+        <section>
+            <h2>Profile Summary</h2>
+            <p class="para">
+                Passionate B.Tech Computer Science (Cybersecurity) student at Quantum University with practical
+                experience in full-stack development, Java programming, and cybersecurity tools. Proficient in
+                HTML, CSS, JavaScript, Node.js, SQL, and Java, with a strong foundation in C, C++, and Python.
+                Developed projects such as a voice-controlled home assistant, password analyzer, and honeypot
+                for threat detection. Seeking internship opportunities to apply technical skills, collaborate with
+                teams, and gain real-world experience in software development or cybersecurity.
+            </p>
+        </section>
+
+        <!-- Career Objective -->
+        <section>
+            <h2>Career Objective</h2>
+            <p class="para">
+                To secure a challenging internship or entry-level position in software development or cybersecurity,
+                where I can contribute my technical skills, grow professionally, and collaborate on impactful real-world
+                projects. Eager to work with dynamic teams on innovative projects that solve real problems.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+            <div class="item">
+                <h3>B.Tech (CSE - Cybersecurity)</h3>
+                <div class="sub-item">
+                    <p>Quantum University (2022 – 2026)</p>
+                    <p>CGPA: 7.67</p>
+                </div>
+            </div>
+            <div class="item">
+                <h3>Intermediate (Science)</h3>
+                <div class="sub-item">
+                    <p>Langat Singh College, Muzaffarpur (2018 – 2020)</p>
+                    <p>58.2%</p>
+                </div>
+            </div>
+            <div class="item">
+                <h3>Matriculation</h3>
+                <div class="sub-item">
+                    <p>K.D.H. School, Malinagar, Pusa (2016 – 2017)</p>
+                    <p>70.8%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li><b>Personal Portfolio:</b> Built with HTML, CSS, and JavaScript showcasing academic details, skills,
+                    and projects.</li>
+                <li><b>Password Validator:</b> Java GUI project demonstrating password validation and rule enforcement.
+                </li>
+                <li><b>Image Encryption & Decryption:</b> Java-based security project for image protection.</li>
+                <li><b>To-Do List Maker:</b> Web app with add, edit, and delete features using local storage.</li>
+                <li><b>Password Strength Analyzer:</b> Java Swing-based tool for password security awareness.</li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <h2>Skills</h2>
+            <div class="skills">
+
+                <div>
+                    <h3>Programming Languages</h3>
+                    <p>Java, C++, C, Python, PHP, Node.js</p>
+                </div>
+
+                <div>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, Bootstrap, Angular, React, Node.js, Frontend, UI/UX, Backend</p>
+                </div>
+
+                <div>
+                    <h3>Database</h3>
+                    <p>MySQL, MongoDB, SQL</p>
+                </div>
+
+                <div>
+                    <h3>Cybersecurity</h3>
+                    <p>Digital Forensics, IAM, Vulnerability Management, Threat Detection, CIA Triad,
+                        Network Security, Risk Management</p>
+                </div>
+
+                <div>
+                    <h3>Tools & IDEs</h3>
+                    <p>VS Code, IntelliJ IDEA, PyCharm, Nmap, Wireshark, Linux, MS Office, Cisco Packet Tracer</p>
+                </div>
+
+                <div>
+                    <h3>Data Structures & Algorithms</h3>
+                    <p>Linked List, Stack, Queue, Tree, Graph, OOPs</p>
+                </div>
+
+                <div>
+                    <h3>Development Methodologies</h3>
+                    <p>SDLC, Agile, Waterfall</p>
+                </div>
+
+                <div>
+                    <h3>IT & Support</h3>
+                    <p>Troubleshooting, Windows Support, Technical Support, Installation</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certificates -->
+        <section>
+            <h2>Certificates</h2>
+            <ul>
+                <li>Introduction to Cybersecurity – Cisco Network Academy</li>
+                <li>SQL Injection – EC-Council</li>
+                <li>Database Foundation – Oracle</li>
+                <li>Frontend Web Development – RF Skilling Academy</li>
+                <li>Full Stack Web Development – Internshala</li>
+                <li>Java Complete Course – Udemy</li>
+                <li>Cybersecurity Training – Tech Mahindra Foundation (SIDH)</li>
+            </ul>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2>Internship / Work Experience</h2>
+            <div class="item">
+                <h3>Full Stack Web Development (Internshala)</h3>
+                <p>(10/2023 – 12/2023) – Built a Hotel Management System with secure payment, reviews, and complaint
+                    features.</p>
+            </div>
+            <div class="item">
+                <h3>Tata Cybersecurity Analyst Simulation (Forage)</h3>
+                <p>(08/2025) – Gained IAM expertise, cybersecurity practices, and delivered professional documentation.
+                </p>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
