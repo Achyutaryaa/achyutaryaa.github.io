@@ -64,7 +64,7 @@ let viewportHeight = window.innerHeight;
 let totalHeaderHeightVh = (totalHeaderHeightPx / viewportHeight) * 100;
 document.getElementById("home").style.height = 100 - totalHeaderHeightVh +'vh';
 
-document.getElementById('resume').href = 'https://drive.google.com/file/d/1Uv6ycYs2bTFfiEELAqDlfTD-86RnpKv0/view?usp=drive_link';
+// document.getElementById('resume').href = 'https://drive.google.com/file/d/1Uv6ycYs2bTFfiEELAqDlfTD-86RnpKv0/view?usp=drive_link';
 
 // ====================================================================================================
 // about-container
