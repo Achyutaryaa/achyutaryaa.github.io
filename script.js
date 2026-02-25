@@ -40,13 +40,13 @@ document.getElementById("resume-box").addEventListener("click", function () {
 
 // about ============================================================================================
 const intro = document.getElementById("intro");
-intro.innerText = `Hi, I’m a passionate Web Developer with strong hands-on experience in building modern, responsive, and user-friendly websites. I specialize in creating robust, secure, and high-performance web solutions that help businesses and individuals build a strong online presence.
+intro.innerText = `Hi, I'm a passionate Web Developer with strong hands-on experience in building modern, responsive, and user-friendly websites. I specialize in creating robust, secure, and high-performance web solutions that help businesses and individuals build a strong online presence.
 
 I enjoy transforming ideas into real-world digital products using clean code and modern technologies. From designing attractive user interfaces to developing functional backends and managing databases, I focus on delivering complete, reliable solutions. I believe a great website should not only look good but also be fast, accessible, and easy to use.
 
-I’m continuously learning new tools and technologies to stay up-to-date with current industry trends. My goal is to create meaningful digital experiences and help clients achieve their goals through well-crafted web applications.
+I'm continuously learning new tools and technologies to stay up-to-date with current industry trends. My goal is to create meaningful digital experiences and help clients achieve their goals through well-crafted web applications.
 
-If you’re looking for someone who is dedicated, detail-oriented, and passionate about building impactful websites, I’d love to collaborate with you.`
+If you're looking for someone who is dedicated, detail-oriented, and passionate about building impactful websites, I'd love to collaborate with you.`
 
 
 // service ==========================================================================================
@@ -100,7 +100,13 @@ serviceNextBtn.addEventListener('click', () => {
 updateService(serviceIndex);
 
 // apply service link
-document.getElementById('service-request').style.href='https://docs.google.com/forms/d/e/1FAIpQLSe3U008k2YlvXR2IXt1eyt-vJ7DEC1KV85BXs80S08jUcdg6A/viewform?usp=sharing&ouid=113252238743288571575';
+document.getElementById("service-request")
+.addEventListener("click", function () {
+    window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSe3U008k2YlvXR2IXt1eyt-vJ7DEC1KV85BXs80S08jUcdg6A/viewform?usp=sharing",
+        "_blank"
+    );
+});
 
 // project ==========================================================================================
 const myProjects = [
@@ -172,6 +178,9 @@ const skills = [
     {'name': 'C Programming','level': 'Intermediate','desc': "I've 2 running project",'value': 40},
     {'name': 'C++ Programming','level': 'Intermediate','desc': "I've 2 running project",'value': 80},
     {'name': 'Java Programming','level': 'Intermediate','desc': "I've 2 running project",'value': 70},
+    {'name': 'Python Programming', 'level': 'Beginner', 'desc': "nothing", 'value': 30},
+    {'name': 'Kotlin Programming', 'level': 'Beginner', 'desc': "nothing", 'value': 20},
+    {'name': 'React', 'level': 'Beginner', 'desc': "nothing", 'value': 15},
     {'name': 'MySQL','level': 'Intermediate','desc': "I've 2 running project",'value': 40},
     {'name': 'DSA','level': 'Intermediate','desc': "I've 2 running project",'value': 60}
 ];
