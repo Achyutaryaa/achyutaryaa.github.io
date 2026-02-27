@@ -19,8 +19,8 @@
 
 
 section {
-    padding: 20px;
-    padding-top: 6rem;
+    padding: 6rem 20px;
+    /* padding-top: 6rem; */
 }
 
 section h2 {
@@ -150,7 +150,6 @@ section:nth-child(2) p {
     padding: 20px;
     margin: 0 20px;
     font-size: 1.02em;
-    font-family: cursive;
 }
 
 section:nth-child(2) p::first-letter {
@@ -375,7 +374,7 @@ section:nth-child(5) {
 }
 
 .skill-container {
-    background: linear-gradient(rgba(192,192,192, .5), rgba(64,64,64, .7));
+    background: linear-gradient(rgba(192,192,192, .5), #efa9a9);
     width: 70%;
     max-height: 75vh;
     overflow: auto;
@@ -388,7 +387,11 @@ section:nth-child(5) {
 
 
 .skill-container > div {
-    margin-bottom: 1.2rem;
+    margin-bottom: .6rem;
+    background-color: #ece7e753;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #86777753;
 }
 
 .progress-cent {
@@ -399,25 +402,25 @@ section:nth-child(5) {
 
 .skill-porgress {
     width: 100%;
-    height: 18px;
+    height: 5px;
     border-radius: 20px;
     overflow: hidden;
     appearance: none;
 }
 
-.skill-progress::-webkit-progress-bar {
-    background-color: #eee;
+::-webkit-progress-bar {
     border-radius: 20px;
+    background-color: white;
 }
 
-.skill-progress::-webkit-progress-value {
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
+::-webkit-progress-value {
+    background: linear-gradient(90deg, rgb(65, 189, 65), #f00);
     border-radius: 20px;
     transition: width 0.5s ease;
 }
 
 /* Firefox */
-.skill-progress::-moz-progress-bar {
+::-moz-progress-bar {
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     border-radius: 20px;
 }
@@ -428,7 +431,7 @@ section:nth-child(5) {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1rem;
+    padding: 2rem;
     gap: 20px;
     background-color: #000;
     border-radius: 20px;
@@ -586,8 +589,23 @@ footer .container {
     }
 }
 
+@media screen and (min-width: 1024px) {
+    section:nth-child(2) p {
+        font-family: cursive;
+    }
+}
+@media screen and (max-width: 991px) {
+    section:nth-child(2) p {
+        font-family: sans-serif;
+    }
+}
+
 /* Tablets portrait (600px – 767px) */
 @media screen and (max-width: 767px) {
+    section {
+        padding: 20px;
+    }
+
     nav {
         display: none;
     }
@@ -607,11 +625,18 @@ footer .container {
     }
 
     section:nth-child(2) div {
-        margin: 20px 5rem;
+        margin: .3rem 5rem;
+        border-radius: 10px;
+    }
+
+    section:nth-child(2) p {
+        padding: 1rem;
+        margin: 0;
     }
 
     .container3 .main-container {
-        width: 90%;
+        width: 100%;
+        border-radius: 1em;
     }
 
     .container3 .img-box {
@@ -627,6 +652,19 @@ footer .container {
         justify-content: center;
     }
 
+    .container3 .slide-btn {
+        margin: 5px;
+        padding: 5px;
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+    }
+
+    .main-container .apply {
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
     .content-box {
         height: auto;
         max-height: 200px;
@@ -635,6 +673,11 @@ footer .container {
     .container4 {
         width: 90%;
         padding: 15px;
+        border-radius: 10px;
+    }
+
+    .container4 .img-box img {
+        width: 70%;
     }
 
     .container4 .content-box {
@@ -676,10 +719,6 @@ footer .container {
         margin: 0;
     }
 
-    .container3 .main-container {
-        width: 95%;
-        padding: 15px;
-    }
 
     .container3 .img-box {
         width: 100%;

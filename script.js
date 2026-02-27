@@ -69,7 +69,9 @@ const myServices = [
 const serviceImage = document.querySelector('#service .img-box img');
 const serviceDesc = document.querySelector('#service .content-box');
 const servicePrevBtn = document.getElementById('slide-prev');
+servicePrevBtn.innerText = '<<<';
 const serviceNextBtn = document.getElementById('slide-next');
+serviceNextBtn.innerText = '>>>';
 
 function updateService(index) {
     serviceImage.src = myServices[index].image;
@@ -196,7 +198,6 @@ skills.forEach(skill => {
         <progress id="file" class="skill-porgress" value="${skill.value}" max="100"> ${skill.value}% </progress>
     `;
 
-    divBox.style.width = "90%";
     skillContainer.appendChild(divBox);
 });
 
