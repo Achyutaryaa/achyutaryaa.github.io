@@ -1,173 +1,135 @@
-const navbar = document.querySelector("nav");
-const firstSection = document.getElementById("sec1");
+document.addEventListener("DOMContentLoaded", () => {
 
-let lastScrollY = window.scrollY;
+    const links = document.querySelectorAll('#navigation li a');
+    const menuBtn = document.getElementById("mobile-nav");
+    const nav = document.getElementById("navigation");
+    const header = document.querySelector("header");
 
-window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
+    let lastScrollY = window.scrollY;
 
-    // Option 1: check scroll past first section
-    if (scrollY > firstSection.offsetHeight) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
+    // 🔹 Click → Active Link
+    links.forEach(link => {
+        link.addEventListener('click', function () {
+            links.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
 
-    // Option 2: check scroll past certain pixels
-    // if (scrollY > 100) { ... }
+            // close mobile menu
+            nav.classList.remove("active");
+            menuBtn.classList.remove("active");
 
-    if (currentScrollY > lastScrollY) {
-        // scrolling down
-        navbar.classList.add("hide");
-    } else {
-        // scrolling up
-        navbar.classList.remove("hide");
-    }
+            document.body.classList.remove("no-scroll"); // 🔥 fix
+        });
+    });
 
-    lastScrollY = currentScrollY;
+    // 🔹 Mobile Menu Toggle
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        nav.classList.toggle("active");
+
+        document.body.classList.toggle("no-scroll");
+    });
+    
+    console.log(nav.classList);
 });
 
-// ==================================================================================================
-// ==================================================================================================
 
+// Main View ===========================================================================================
+// main-view contents
+const avialableForRole = ['Java Developer', 'Junior Developer', 'Data Analyst', 'C++ Developer', 'Database Management'];
 
+const currentRoll = document.getElementById("current-skill");
 
-// first section ====================================================================================
+let index = 0;
+
+// resume
 document.getElementById("resume-box").addEventListener("click", function () {
-    alert("Opening my resume in a new tab 📄");
-    window.open("https://docs.google.com/document/d/1Zwhr4VYwYcBHEaO6eiZ6tBHcONlHtOioqnPJkklr0mM/edit?usp=sharing", "_blank");
-});
+    const userChoice = confirm("Do you want to open resume in a new tab? 📄");
 
-// about ============================================================================================
-const intro = document.getElementById("intro");
-intro.innerText = `Hi, I'm a passionate Web Developer with strong hands-on experience in building modern, responsive, and user-friendly websites. I specialize in creating robust, secure, and high-performance web solutions that help businesses and individuals build a strong online presence.
+    if (userChoice) {
+        const isMobile = window.innerWidth <= 767;
 
-I enjoy transforming ideas into real-world digital products using clean code and modern technologies. From designing attractive user interfaces to developing functional backends and managing databases, I focus on delivering complete, reliable solutions. I believe a great website should not only look good but also be fast, accessible, and easy to use.
-
-I'm continuously learning new tools and technologies to stay up-to-date with current industry trends. My goal is to create meaningful digital experiences and help clients achieve their goals through well-crafted web applications.
-
-If you're looking for someone who is dedicated, detail-oriented, and passionate about building impactful websites, I'd love to collaborate with you.`
-
-
-// service ==========================================================================================
-const myServices = [
-    {
-        'image': '/pics/web-dev.jpeg',
-        'description': `I've good hand-on experience in <strong>Web Development</strong>. I can build a strong, robust, and modern website for your business that can engage more customer.`
-    },
-    {
-        'image': '/pics/db-man.jpeg',
-        'description': `I've good hand-on experience in <strong>Database Management</strong>. I can design a strong, robust, and easily accessible and maintanable database.`
-    },
-    {
-        'image': '/pics/Java.png',
-        'description': `I've good hand-on experience in <strong>Java Development</strong>. I can build a strong, robust, and modern Mobile App and Destop Application for your business that can engage more customer.`
+        if (isMobile) {
+            alert("You are using mobile. Please view in print layout to see in a structured way.");
+        }
+        window.open(
+            "https://docs.google.com/document/d/1Zwhr4VYwYcBHEaO6eiZ6tBHcONlHtOioqnPJkklr0mM/edit?usp=sharing",
+            "_blank"
+        );
     }
-]
-
-// elements
-const serviceImage = document.querySelector('#service .img-box img');
-const serviceDesc = document.querySelector('#service .content-box');
-const servicePrevBtn = document.getElementById('slide-prev');
-servicePrevBtn.innerText = '<<<';
-const serviceNextBtn = document.getElementById('slide-next');
-serviceNextBtn.innerText = '>>>';
-
-function updateService(index) {
-    serviceImage.src = myServices[index].image;
-    serviceDesc.innerHTML = myServices[index].description;
-}
-
-let serviceIndex = 0;
-
-// Left button click
-servicePrevBtn.addEventListener('click', () => {
-    serviceIndex--;
-    if (serviceIndex < 0) {
-        serviceIndex = myServices.length - 1;
-    }
-    updateService(serviceIndex);
 });
 
-// Right button click
-serviceNextBtn.addEventListener('click', () => {
-    serviceIndex++;
-    if (serviceIndex >= myServices.length) {
-        serviceIndex = 0;
-    }
-    updateService(serviceIndex);
-});
 
-// Load first service on page load
-updateService(serviceIndex);
-
-// apply service link
-document.getElementById("service-request")
-.addEventListener("click", function () {
-    window.open(
-        "https://docs.google.com/forms/d/e/1FAIpQLSe3U008k2YlvXR2IXt1eyt-vJ7DEC1KV85BXs80S08jUcdg6A/viewform?usp=sharing",
-        "_blank"
-    );
-});
-
-// project ==========================================================================================
-const myProjects = [
+// Abouts ===========================================================================================
+// About contents
+const contents = [
     {
-        'image': '/pics/password_checker.png',
-        'description': `This is a <strong>GUI Based Java Project</strong> that helps user to check and validate thier password. This project suggest user to make strong password. This project can use to demonstrate, too.<br><br>
-        I've used regex for validate uppercase, lowercase, numbers, and a special character.`
+        'title': 'About Me',
+        'desc': 'I am a passionate B.Tech student from Quantum University, Roorkee, with a strong interest in <span>software development</span> and <span>cybersecurity</span>. I enjoy building real-world projects using technologies like <span>Java</span>, <span>HTML</span>, <span>CSS</span>, <span>JavaScript</span>, and backend tools such as <span>Node.js</span> and <span>SQL</span>. I am continuously improving my problem-solving skills through <span>Data Structures and Algorithms</span> and aim to become a skilled <span>cybersecurity professional</span>. I am also actively seeking opportunities to gain practical experience through internships and projects.'
     },
     {
-        'image': '/pics/to-do_list.png',
-        'description': `This project is build using <strong>Web Technology</strong>. User can easily add or remove items from the list.`
+        'title': 'Education',
+        'desc': 'I am currently pursuing my <span>Bachelor of Technology (B.Tech) from Quantum University, Roorkee</span>. Throughout my academic journey, I have developed a solid foundation in computer science concepts including programming, database management, and networking. I have studied Core Java and worked on various academic and personal projects that strengthened my understanding of software development and system design.'
     },
     {
-        'image': '/pics/temperature_converter.png',
-        'description': `I've good hand-on experience in <strong>Web Development</strong>. I can build a strong, robust, and modern website for your business that can engage more customer.`
+        'title': 'Certifications',
+        'desc': 'I have earned multiple certifications from globally recognized platforms including <span>Cisco Networking Academy</span>, <span>Infosys Springboard</span>, <span>IBM SkillsBuild</span>, and <span>Udemy</span>. My learning spans networking, Spring Boot development, cybersecurity, and full-stack fundamentals. These certifications not only enhanced my technical knowledge but also provided practical, hands-on experience with real-world tools and scenarios, preparing me for industry-level challenges.'
+    },
+    {
+        'title': 'Daily Coding Practice',
+        'desc': 'I consistently improve my problem-solving and technical skills through daily coding practice on platforms like <span>TryHackMe</span>, <span>CodeChef</span>, <span>LeetCode</span>, and <span>HackerRank</span>. I work on real-world cybersecurity labs on <span>TryHackMe</span> and solve algorithmic and data structure problems to strengthen my logical thinking. This regular practice helps me build a strong foundation in coding, enhance my analytical abilities, and stay prepared for technical challenges.'
     }
 ];
 
- // Elements
-const projectImage = document.querySelector('#project .img-box img');
-const projectDesc = document.querySelector('#project .content-box');
-const counter = document.querySelector(".counter");
+const aboutContainer = document.querySelector(".about-container");
 
-const leftBtn = document.querySelector('#left-btn');
-const rightBtn = document.querySelector('#right-btn');
+contents.forEach(ele => {
+    const divBox = document.createElement("div");
+    divBox.classList.add("card");
 
- let projectIndex = 0;
+    divBox.innerHTML = `
+    <i class="corner tl"></i>
+    <i class="corner br"></i>
+        <h3>${ele.title}</h3>
+        <p> ${ele.desc}</p>
+    `;
 
- function updateProject(index) {
-    projectImage.src = myProjects[index].image;
-    projectDesc.innerHTML = myProjects[index].description;
-    counter.innerHTML = (index + 1) + ' / ' + myProjects.length;
-}
-
-
-// btn text
-leftBtn.innerHTML = "<<<";
-rightBtn.innerHTML = ">>>";
-// Left button click
-leftBtn.addEventListener('click', () => {
-    projectIndex--;
-    if (projectIndex < 0) {
-        projectIndex = myProjects.length - 1;
-    }
-    updateProject(projectIndex);
+    aboutContainer.appendChild(divBox);
 });
 
-// Right button click
-rightBtn.addEventListener('click', () => {
-    projectIndex++;
-    if (projectIndex >= myProjects.length) {
-        projectIndex = 0;
+
+// Projects ===========================================================================================
+// Project object
+const projects = [
+    {
+        'title': 'Image Encryption System',
+        'desc': 'This is a GUI based Java Project. It is capable to mix chunk of pixels to Encryption and rearange to back in original format.',
+        'link': ''
+    },
+    {
+        'title': 'Text Encryption System',
+        'desc': 'This project implements text encryption and decryption, allowing conversion between plain text and cipher text.',
+        'link': ''
+    },
+    {
+        'title': 'To - Do List',
+        'desc': "It can dynamically append new items and, can marks as done, and can delete. I've used HTML, CSS, and JavaScript for this project.",
+        'link': ''
     }
-    updateProject(projectIndex);
+];
+
+const projectContainer = document.querySelector(".project-container");
+
+projects.forEach(ele => {
+    const divBox = document.createElement("div");
+    divBox.classList.add("project-card");
+
+    divBox.innerHTML = `
+        <h3>${ele.title}</h3>
+        <p> ${ele.desc}</p>
+    `;
+
+    projectContainer.appendChild(divBox);
 });
-
-// Load first project on page load
-updateProject(projectIndex);
-
 
 
 // skills ===========================================================================================
@@ -196,6 +158,7 @@ const skillContainer = document.querySelector(".skill-container");
 
 skills.forEach(skill => {
     const divBox = document.createElement("div");
+    divBox.classList.add("skill-card");
 
     divBox.innerHTML = `
         <h5>${skill.name}:<span class="progress-cent">${skill.value}%</span></h5>
@@ -203,23 +166,4 @@ skills.forEach(skill => {
     `;
 
     skillContainer.appendChild(divBox);
-});
-
-// footer ===========================================================================================
-
-const links = [
-  "https://www.facebook.com/KingAaryaa",
-  "https://www.instagram.com/OneAaryaa",
-  "https://twitter.com/OneAaryaa",
-  "https://www.linkedin.com/in/Achyutaryaa"
-];
-
-const icons = document.querySelectorAll(".social-media span");
-
-icons.forEach((span, index) => {
-    const a = document.createElement("a");
-    a.href = links[index];       // set URL
-    a.target = "_blank";         // open in new tab
-    span.parentNode.insertBefore(a, span); // insert <a> before span
-    a.appendChild(span);         // move span inside <a>
 });
