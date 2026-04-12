@@ -154,7 +154,7 @@ const skills = [
 ];
 
 // skill loder
-const skillContainer = document.querySelector(".skill-container");
+const skillContainer = document.querySelector(".skill-wrapper");
 
 skills.forEach(skill => {
     const divBox = document.createElement("div");
