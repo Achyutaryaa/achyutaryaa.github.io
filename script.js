@@ -167,3 +167,18 @@ skills.forEach(skill => {
 
     skillContainer.appendChild(divBox);
 });
+
+
+// Social media
+document.querySelectorAll(".social-media span").forEach((icon, index) => {
+    icon.addEventListener("click", () => {
+        let urls = [
+            "https://www.facebook.com/kingAaryaa",
+            "https://www.instagram.com/oneAaryaa",
+            "https://www.twitter.com/oneAaryaa",
+            "https://www.linkedin.com/in/Achyutaryaa"
+        ];
+
+        window.open(urls[index], "_blank");
+    });
+});
