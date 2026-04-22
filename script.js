@@ -111,9 +111,9 @@ const projects = [
         'link': ''
     },
     {
-        'title': 'To - Do List',
-        'desc': "It can dynamically append new items and, can marks as done, and can delete. I've used HTML, CSS, and JavaScript for this project.",
-        'link': ''
+        'title': 'Smart Task Tracker',
+        'desc': "Built an interactive task tracker with real-time task management features including add, update, and delete functionality. Implemented local storage to maintain task data across browser sessions without backend support.",
+        'link': 'https://github.com/Achyutaryaa/smart_task_tracker'
     }
 ];
 
@@ -122,11 +122,12 @@ const projectContainer = document.querySelector(".project-container");
 projects.forEach(ele => {
     const divBox = document.createElement("div");
     divBox.classList.add("project-card");
-
-    divBox.innerHTML = `
+    let child = `
         <h3>${ele.title}</h3>
-        <p> ${ele.desc}</p>
+        <p>${ele.desc}</p>
     `;
+    if(ele.link) child += `<a class="project-link" href="${ele.link}" target="_blank">Click Here</a>`;
+    divBox.innerHTML = child;
 
     projectContainer.appendChild(divBox);
 });

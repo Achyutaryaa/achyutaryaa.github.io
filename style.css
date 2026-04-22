@@ -247,6 +247,7 @@ header.hide {
     border-radius: 10px;
     text-transform: uppercase;
     transition: all .3s ease-in-out;
+    cursor: pointer;
 }
 
 .resume-link:hover {
@@ -296,8 +297,8 @@ header.hide {
     color: black;
     padding: 0 5px;
     border-radius: 2px;
-    background-color: rgba(172, 255, 47, 0.746);
-    font-weight: 500;
+    background-color: rgba(172, 255, 47, 0.683);
+    font-weight: 600;
 }
 
 .card p {
@@ -412,6 +413,23 @@ header.hide {
 
 .project-card:hover h3::after {
     background-color: greenyellow;
+}
+
+.project-card p {
+    text-align: justify;
+}
+
+.project-link {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1.2em;
+    color: green;
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
 }
 
 /* Skills */
