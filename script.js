@@ -68,7 +68,7 @@ const contents = [
     },
     {
         'title': 'Education',
-        'desc': 'I am currently pursuing my <span>Bachelor of Technology (B.Tech) from Quantum University, Roorkee</span>. Throughout my academic journey, I have developed a solid foundation in computer science concepts including programming, database management, and networking. I have studied Core Java and worked on various academic and personal projects that strengthened my understanding of software development and system design.'
+        'desc': 'I completed my <span>Bachelor of Technology (B.Tech) from Quantum University, Roorkee</span> in June 2026. Throughout my academic journey, I developed a solid foundation in computer science concepts including programming, database management, and networking. I studied Core Java and worked on various academic and personal projects that strengthened my understanding of software development and system design.'
     },
     {
         'title': 'Certifications',
