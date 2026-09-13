@@ -66,7 +66,7 @@ header.hide {
 #navigation {
     display: flex;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.546);
+    background-color: rgba(0, 0, 0, 0.905);
     padding: 0 20px;
     border-radius: 30px;
 }
@@ -448,15 +448,43 @@ header.hide {
     box-shadow: 0 0 2px rgb(83, 83, 83);
 }
 
+
 .skill-wrapper {
-    width: calc(100% - 40px);
-    max-height: calc(100% - 40px);
-    overflow: scroll;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    scrollbar-width: none;
-    border-radius: 5px;
+  width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  border-radius: 5px;
+
+  /* Firefox support */
+  scrollbar-width: thin;
+  scrollbar-color: #1a41ab transparent; /* thumb color | track color */
+}
+
+/* Chrome, Edge, Safari support for .skill-wrapper */
+.skill-wrapper::-webkit-scrollbar {
+    width: 2px;
+}
+
+.skill-wrapper::-webkit-scrollbar-button {
+    display: none;
+}
+
+.skill-wrapper::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Track background color */
+  border-radius: 5px;
+}
+
+.skill-wrapper::-webkit-scrollbar-thumb {
+  background: #555;    /* Scrollbar thumb color */
+  border-radius: 3px;  /* Rounded edges */
+}
+
+.skill-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #888;    /* Color when hovering */
 }
 
 .skill-card {
@@ -519,10 +547,10 @@ footer .container {
 }
 
 .social-media {
-    background-color: black;
+    background-color: rgba(114, 107, 107, 0.533);
     width: fit-content;
     margin: auto;
-    padding: 0 20px;
+    padding: 5px 20px;
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -541,7 +569,7 @@ footer .container {
     align-items: center;
     margin: 10px;
     background-color: white;
-    color: #000;
+    color: #000000af;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -638,25 +666,35 @@ hr {
 
     /* home > main-view */
     #home {
-        height: auto;
+        height: 90vh;
+        justify-content: center;
+        display: flex;
+        align-items: center;
         padding-top: 5em;
     }
 
     .main-view {
         display: block;
         margin: 0;
-        padding: 10px;
+        
         width: 100%;
     }
 
     .image-box {
         width: 70%;
+        border-radius: 2px 100px;
         margin: 0 auto;
+        margin-bottom: 7em;
     }
 
     .view-box {
         margin-top: 50px;
         padding: 0;
+    }
+
+    .resume-link {
+        background-color: #27a56d;
+        font-weight: bold;
     }
 
     .view-box h1 {
@@ -748,7 +786,7 @@ hr {
     }
 
     .social-media {
-        padding: 0 15px;
+        padding: 5px 10px;
         transform: scale(.7);
     }
 

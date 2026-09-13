@@ -114,6 +114,11 @@ const projects = [
         'title': 'Smart Task Tracker',
         'desc': "Built an interactive task tracker with real-time task management features including add, update, and delete functionality. Implemented local storage to maintain task data across browser sessions without backend support.",
         'link': 'https://github.com/Achyutaryaa/smart_task_tracker'
+    },
+    {
+        'title': 'Library Management System',
+        'desc': 'Developed a robust Java-based backend for a library management system that enables efficient book search and retrieval, tracks inventory updates, and generates automated alerts for due dates, availability, and other important library activities.',
+        'link': ''
     }
 ];
 
@@ -136,22 +141,23 @@ projects.forEach(ele => {
 // skills ===========================================================================================
 // skill object
 const skills = [
-    {'name': 'HTML','level': 'Intermediate','desc': "I've 3 running project",'value': 90},
-    {'name': 'CSS','level': 'Intermediate','desc': "I've 2 running project",'value': 80},
-    {'name': 'Bootstrap','level': 'Beginner','desc': "I've 2 running project",'value': 30},
-    {'name': 'JavaScript','level': 'Intermediate','desc': "I've 2 running project",'value': 50},
-    {'name': 'DOM Manipulation','level': 'Intermediate','desc': "I've 2 running project",'value': 40},
-    {'name': 'JQuery','level': 'Intermediate','desc': "I've 2 running project",'value': 30},
-    {'name': 'C Programming','level': 'Intermediate','desc': "I've 2 running project",'value': 40},
-    {'name': 'C++ Programming','level': 'Intermediate','desc': "I've 2 running project",'value': 80},
-    {'name': 'Java Programming','level': 'Intermediate','desc': "I've 2 running project",'value': 70},
-    {'name': 'Java Springboot','level': 'Intermediate','desc': "I've 2 running project",'value': 25},
-    {'name': 'Java MVC','level': 'Intermediate','desc': "I've 2 running project",'value': 10},
-    {'name': 'Python Programming', 'level': 'Beginner', 'desc': "nothing", 'value': 30},
-    {'name': 'Kotlin Programming', 'level': 'Beginner', 'desc': "nothing", 'value': 20},
-    {'name': 'React', 'level': 'Beginner', 'desc': "nothing", 'value': 15},
-    {'name': 'MySQL','level': 'Intermediate','desc': "I've 2 running project",'value': 40},
-    {'name': 'DSA','level': 'Intermediate','desc': "I've 2 running project",'value': 60}
+    {'name': 'HTML','level': 'Intermediate','value': 90},
+    {'name': 'CSS','level': 'Intermediate','value': 80},
+    {'name': 'Bootstrap','level': 'Beginner','value': 30},
+    {'name': 'JavaScript','level': 'Intermediate','value': 50},
+    {'name': 'DOM Manipulation','level': 'Intermediate','value': 40},
+    {'name': 'JQuery','level': 'Intermediate','value': 30},
+    {'name': 'Git','level': 'Intermediate','value': 60},
+    {'name': 'C Programming','level': 'Intermediate','value': 40},
+    {'name': 'C++ Programming','level': 'Intermediate','value': 80},
+    {'name': 'Java Core','level': 'Intermediate','value': 70},
+    {'name': 'Java Springboot','level': 'Intermediate','value': 25},
+    {'name': 'Java MVC','level': 'Intermediate','value': 10},
+    {'name': 'Python Programming', 'level': 'Beginner','value': 30},
+    {'name': 'Kotlin Programming', 'level': 'Beginner','value': 20},
+    {'name': 'React', 'level': 'Beginner','value': 15},
+    {'name': 'MySQL','level': 'Intermediate','value': 40},
+    {'name': 'DSA','level': 'Intermediate','value': 60}
 ];
 
 // skill loder
